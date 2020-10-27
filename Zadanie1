@@ -1,0 +1,34 @@
+import random
+
+tablica = []
+tablica2 = []
+temp = 0
+
+for i in range(10):
+	tablica.append(random.randrange(1,10000))
+
+
+for i in range(10):
+	tablica2.append(int(str(tablica[i])[-1]))
+
+print(tablica)
+
+print(tablica2)
+
+for i in range(10):
+	for j in range(1,10):
+		if tablica2[j-1] > tablica2[j]:
+
+			temp = tablica2[j-1] 
+			tablica2[j-1] = tablica2[j]
+			tablica2[j] = temp
+
+			temp = tablica[j-1] 
+			tablica[j-1] = tablica[j]
+			tablica[j] = temp
+			
+
+
+
+print(tablica)
+print(tablica2)
