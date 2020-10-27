@@ -1,0 +1,39 @@
+import random
+
+tablica = []
+tablica2 = []
+temp = 0
+
+def sumaLiczby(str):
+	sum = 0
+	for i in str:
+		sum += int(i)
+	return sum
+for i in range(10):
+	tablica.append(random.randrange(1,100))
+
+
+for i in range(10):
+	tablica2.append(sumaLiczby(str(tablica[i])))
+
+print(tablica)
+
+print(tablica2)
+
+for i in range(10):
+	for j in range(1,10):
+		if tablica2[j-1] > tablica2[j]:
+
+			temp = tablica2[j-1] 
+			tablica2[j-1] = tablica2[j]
+			tablica2[j] = temp
+
+			temp = tablica[j-1] 
+			tablica[j-1] = tablica[j]
+			tablica[j] = temp
+			
+
+
+
+print(tablica)
+print(tablica2)
