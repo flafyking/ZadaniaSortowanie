@@ -1,0 +1,43 @@
+import random
+
+tablica = []
+nieparzyste = []
+parzyste = []
+temp = 0
+
+
+
+for i in range(10):
+	tablica.append(random.randrange(1,100))
+
+print(tablica)
+
+
+for i in range(10):
+	if tablica[i] % 2 == 0:
+		parzyste.append(tablica[i])
+	else:
+		nieparzyste.append(tablica[i])
+
+for i in range(len(parzyste)):
+	for j in range(1,len(parzyste)):
+		if parzyste[j-1] > parzyste[j]:
+			temp = parzyste[j-1] 
+			parzyste[j-1] = parzyste[j]
+			parzyste[j] = temp
+
+for i in range(len(nieparzyste)):
+	for j in range(1,len(nieparzyste)):
+		if nieparzyste[j-1] > nieparzyste[j]:
+			temp = nieparzyste[j-1] 
+			nieparzyste[j-1] = nieparzyste[j]
+			nieparzyste[j] = temp
+
+tablica.clear()
+for i in range(len(parzyste)):
+	tablica.append(parzyste[i])
+
+for i in range(len(nieparzyste)):
+	tablica.append(nieparzyste[i])
+			
+print(tablica)
